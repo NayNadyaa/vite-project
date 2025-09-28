@@ -3,8 +3,8 @@ import { useState } from "react";
 export default function Counter() {
   const [count, setCount] = useState(0);
 
-  const increment = () => setCount(count + 1);
-  const decrement = () => setCount(prev => (prev > 0 ? prev - 1 : 0));
+  const increment = () => setCount(count + 1); // plus 1 function
+  const decrement = () => setCount(prev => (prev > 0 ? prev - 1 : 0)); // minus 1 if more than 0 function
 
   return (
     <div className="p-4 border rounded mb-4">

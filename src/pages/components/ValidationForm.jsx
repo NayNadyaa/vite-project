@@ -7,11 +7,11 @@ export default function ValidationForm() {
     handleSubmit,
     formState: { errors },
     watch,
-  } = useForm();
+  } = useForm(); // use form react hook
 
   const onSubmit = (data) => {
     console.log(data);
-    alert("Form submitted successfully!");
+    alert("Form submitted successfully!"); // show alert after successfully submit
   };
 
   const password = watch("password");
@@ -27,7 +27,7 @@ export default function ValidationForm() {
           <input
             className="w-full p-2 border rounded"
             type="text"
-            {...register("username", {
+            {...register("username", { // regis field name in form with rules
               required: "Username is required",
             })}
           />
@@ -44,7 +44,7 @@ export default function ValidationForm() {
             {...register("email", {
               required: "Email is required",
               pattern: {
-                value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+                value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/, // regex pattern for email
                 message: "Email should be a valid email address",
               },
             })}
