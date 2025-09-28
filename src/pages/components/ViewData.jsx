@@ -3,11 +3,12 @@ import { useEffect, useState } from "react";
 export default function ViewData() {
   const [data, setData] = useState(null);
 
+  // fetching data using useEffect
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/todos/1")
-      .then((res) => res.json())
-      .then((data) => setData(data));
-  }, []);
+      .then((res) => res.json()) // convert response into json format
+      .then((data) => setData(data)); // set json into data state
+  }, []); // parameter empty, make it running once when the first time component is render
 
   console.log('data', data);
   
